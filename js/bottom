@@ -1,0 +1,27 @@
+</tbody>
+<tfoot>
+	    <tr id="pagerTwo">
+	        <td colspan="25" style="border-right: solid 3px #7f7f7f;">
+		        <img src="images/first.png" class="first"/>
+		        <img src="images/prev.png" class="prev"/>
+		        <input type="text" class="pagedisplay"/>
+		        <img src="images/next.png" class="next"/>
+		        <img src="images/last.png" class="last"/>
+		        <select class="pagesize">
+			        <option selected="selected"  value="50">50</option>
+
+			        <option value="100">100</option>
+			        <option value="150">150</option>
+			        <option value="200">200</option>
+				<option value="250">250</option>
+				<option value="300">300</option>
+				<option value="350">350</option>
+				<option value="400">400</option>
+
+		        </select>
+		    </td>
+	    </tr>
+	</tfoot>
+</table>
+    
+</div>
