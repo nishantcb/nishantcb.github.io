@@ -1,125 +1,579 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Nishant Kumar</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<head>
+    <title>Nishant Kumar | Gallery</title>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-							<!-- Header -->
-								<header id="header">
-									<a href="index.html" class="logo"><strong>Home</strong></a>
-									<ul class="icons">
-										<li><a href="https://x.com/home" class="icon brands fa-twitter" target="_blank" ><span class="label">Twitter</span></a></li>
-										<li><a href="https://www.linkedin.com/feed/" class="icon brands fa-linkedin" target="_blank" ><span class="label">Linked IN</span></a></li>
-										<li><a href="https://scholar.google.com/citations?user=hDMnc-UAAAAJ&hl=en" target="_blank" class="icon brands fa-google"><span class="label">Scholar</span></a></li>
-										<li><a href="https://www.instagram.com/" class="icon brands fa-instagram" target="_blank" ><span class="label">Instagram</span></a></li>
-										<li><a href="https://github.com/nishantcb"  target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-									</ul>
-								</header>
+<style>
 
-							<!-- Content -->
-								<section>
-									<header class="main">
-										<h1>Memories</h1>
-									</header>
-										<!-- Row 1 -->
-										<div class="box alt">
-														<div class="row gtr-50 gtr-uniform">
-															<div class="col-4"><span class="image fit"><img src="gallery/1.jpg" alt="" /></span></div>
-															<div class="col-4"><span class="image fit"><img src="gallery/2.jpg" alt="" /></span></div>
-															<div class="col-4"><span class="image fit"><img src="gallery/3.jpg" alt="" /></span></div>
-															<!-- Break -->
-															<div class="col-4"><span class="image fit"><img src="gallery/4.jpg" alt="" /></span></div>
-															<div class="col-4"><span class="image fit"><img src="gallery/5.jpg" alt="" /></span></div>
-															<div class="col-4"><span class="image fit"><img src="gallery/6.jpg" alt="" /></span></div>
-															<!-- Break -->
-															<div class="col-4"><span class="image fit"><img src="gallery/7.jpg" alt="" /></span></div>
-															<div class="col-4"><span class="image fit"><img src="gallery/8.jpg" alt="" /></span></div>
-															<div class="col-4"><span class="image fit"><img src="gallery/9.jpg" alt="" /></span></div>
-														</div>
-													</div>
+/* =========================
+   GLOBAL
+========================= */
 
-								</section>
-						</div>
-					</div>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
+body{
+    font-family: Arial, sans-serif;
+    background:#0f172a;
+    color:white;
+}
 
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
+/* =========================
+   HEADER
+========================= */
 
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="index.html">Homepage</a></li>
-										<li><a href="github.html">GitHub</a></li>
-										<li><a href="publications.html">Publications</a></li>
-										<li><a href="index.html#research">Research Interest</a></li>
-										<li><a href="gallery.html">Gallery</a></li>
-										<li><a href="webservers.html">Webservers</a></li>
-										<li><a href="conferences.html">Conferences</a></li>
-										<li>
-											<span class="opener">Downloads</span>
-											<ul>
-												<li><a href="packages.html">Packages</a></li>
-												<li><a href="nishant_resume.pdf">Resume</a></li>
-											</ul>
-										</li>
-									</ul>
-								</nav>
+header{
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#111827;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<p>Feel free to reach out with any questions or collaboration ideas.</p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">nishantk@iiitd.ac.in</a></li>
-										<li class="icon solid fa-envelope"><a href="#">nishantkumar031096@gmail.com</a></li>
+.logo{
+    color:white;
+    text-decoration:none;
+    font-size:1.4rem;
+    font-weight:bold;
+}
 
-										<li class="icon solid fa-phone">(000) 000-0000</li>
-										<li class="icon solid fa-home">A318 R & D , IIIT-Delhi<br />
-										New Delhi, India -110020</li>
-									</ul>
-								</section>
+.icons{
+    display:flex;
+    gap:18px;
+    list-style:none;
+}
 
-							<!-- Footer -->
-								<footer id="footer">
-									<!-- <p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p> -->
-								</footer>
+.icons a{
+    color:white;
+    font-size:1.2rem;
+    transition:0.3s;
+}
 
-						</div>
-					</div>
+.icons a:hover{
+    color:#38bdf8;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    padding:80px 8% 40px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:3.2rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:800px;
+    margin:auto;
+    color:#cbd5e1;
+    line-height:1.8;
+    font-size:1.05rem;
+}
+
+/* =========================
+   ALBUM GRID
+========================= */
+
+.album-grid{
+    padding:40px 8% 80px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.album-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:22px;
+    cursor:pointer;
+    height:320px;
+    transition:0.4s ease;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+.album-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.6s ease;
+}
+
+.album-card:hover img{
+    transform:scale(1.1);
+}
+
+.album-card:hover{
+    transform:translateY(-8px);
+}
+
+.album-overlay{
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,0.92),
+        rgba(0,0,0,0.15)
+    );
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    padding:25px;
+}
+
+.album-overlay h2{
+    font-size:1.8rem;
+    margin-bottom:10px;
+}
+
+.album-overlay p{
+    color:#d1d5db;
+    line-height:1.5;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.album-modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    background:rgba(0,0,0,0.96);
+    overflow-y:auto;
+    padding:60px 6%;
+}
+
+.close-btn{
+    position:fixed;
+    top:20px;
+    right:40px;
+    font-size:50px;
+    color:white;
+    cursor:pointer;
+    z-index:10000;
+}
+
+.album-content{
+    max-width:1400px;
+    margin:auto;
+}
+
+.album-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.album-title h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.album-images{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.album-images img{
+    width:100%;
+    border-radius:18px;
+    transition:0.4s ease;
+    cursor:pointer;
+}
+
+.album-images img:hover{
+    transform:scale(1.03);
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.96);
+    z-index:20000;
+
+    justify-content:center;
+    align-items:center;
+}
+
+.lightbox img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#111827;
+    color:#94a3b8;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2.3rem;
+    }
+
+    .album-card{
+        height:250px;
+    }
+
+    .album-title h1{
+        font-size:2rem;
+    }
+
+    .album-modal{
+        padding:40px 5%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <a href="#" class="logo">Nishant Kumar</a>
+
+    <ul class="icons">
+
+        <li>
+            <a href="https://x.com/home" target="_blank">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.linkedin.com/feed/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </li>
+
+        <li>
+            <a href="https://github.com/nishantcb" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.instagram.com/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </li>
+
+    </ul>
+
+</header>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <h1>Memories & Albums</h1>
+
+    <p>
+        Conferences, travel, collaborations, lab life,
+        research presentations, and unforgettable moments
+        throughout my scientific journey.
+    </p>
+
+</section>
+
+<!-- =========================
+     ALBUMS
+========================= -->
+
+<section class="album-grid">
+
+    <!-- MADRID -->
+    <div class="album-card" onclick="openAlbum('madrid')">
+
+        <img src="gallery/madrid/cover.jpg">
+
+        <div class="album-overlay">
+            <h2>Madrid</h2>
+            <p>Conference & Spain memories</p>
+        </div>
+
+    </div>
+
+    <!-- IIIT -->
+    <div class="album-card" onclick="openAlbum('iiitv')">
+
+        <img src="gallery/iiitv/cover.jpg">
+
+        <div class="album-overlay">
+            <h2>IIIT Varanasi</h2>
+            <p>Campus & research life</p>
+        </div>
+
+    </div>
+
+    <!-- RISHIKESH -->
+    <div class="album-card" onclick="openAlbum('rishikesh')">
+
+        <img src="gallery/rishikesh/cover.jpg">
+
+        <div class="album-overlay">
+            <h2>Rishikesh</h2>
+            <p>Nature & travel memories</p>
+        </div>
+
+    </div>
+
+    <!-- ITALY -->
+    <div class="album-card" onclick="openAlbum('italy')">
+
+        <img src="gallery/italy/cover.jpg">
+
+        <div class="album-overlay">
+            <h2>Italy</h2>
+            <p>International collaborations</p>
+        </div>
+
+    </div>
+
+    <!-- LAB -->
+    <div class="album-card" onclick="openAlbum('lab')">
+
+        <img src="gallery/lab/cover.jpg">
+
+        <div class="album-overlay">
+            <h2>Lab Life</h2>
+            <p>Research, coding & science</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     ALBUM MODAL
+========================= -->
+
+<div id="albumModal" class="album-modal">
+
+    <span class="close-btn" onclick="closeAlbum()">&times;</span>
+
+    <div class="album-content">
+
+        <div class="album-title">
+            <h1 id="albumHeading"></h1>
+        </div>
+
+        <div id="albumImages" class="album-images"></div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     LIGHTBOX
+========================= -->
+
+<div id="lightbox" class="lightbox">
+
+    <img id="lightboxImg">
+
+</div>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    © 2026 Nishant Kumar | Research Gallery
+
+</footer>
+
+<!-- =========================
+     SCRIPT
+========================= -->
+
+<script>
+
+/* =========================
+   ALBUM DATABASE
+========================= */
+
+const albums = {
+
+    madrid: {
+        title: "Madrid",
+        images: [
+            "gallery/madrid/1.jpg",
+            "gallery/madrid/2.jpg",
+            "gallery/madrid/3.jpg",
+            "gallery/madrid/4.jpg"
+        ]
+    },
+
+    iiitv: {
+        title: "IIIT Varanasi",
+        images: [
+            "gallery/1.jpg",
+            "gallery/2.jpg",
+            "gallery/3.jpg",
+            "gallery/iiitv/4.jpg"
+        ]
+    },
+
+    rishikesh: {
+        title: "Rishikesh",
+        images: [
+            "gallery/4.jpg",
+            "gallery/2.jpg",
+            "gallery/rishikesh/3.jpg"
+        ]
+    },
+
+    italy: {
+        title: "Italy",
+        images: [
+            "gallery/italy/1.jpg",
+            "gallery/italy/2.jpg",
+            "gallery/italy/3.jpg"
+        ]
+    },
+
+    lab: {
+        title: "Lab Life",
+        images: [
+            "gallery/lab/1.jpg",
+            "gallery/lab/2.jpg",
+            "gallery/lab/3.jpg",
+            "gallery/lab/4.jpg"
+        ]
+    }
+
+};
 
 
-			</div>
+/* =========================
+   OPEN ALBUM
+========================= */
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+function openAlbum(albumName){
 
-	</body>
+    const modal = document.getElementById("albumModal");
+
+    const albumImages = document.getElementById("albumImages");
+
+    const heading = document.getElementById("albumHeading");
+
+    albumImages.innerHTML = "";
+
+    heading.innerText = albums[albumName].title;
+
+    albums[albumName].images.forEach(image => {
+
+        const img = document.createElement("img");
+
+        img.src = image;
+
+        /* OPEN LIGHTBOX */
+        img.onclick = function(){
+
+            document.getElementById("lightbox").style.display = "flex";
+
+            document.getElementById("lightboxImg").src = image;
+
+        }
+
+        albumImages.appendChild(img);
+
+    });
+
+    modal.style.display = "block";
+
+}
+
+
+/* =========================
+   CLOSE ALBUM
+========================= */
+
+function closeAlbum(){
+
+    document.getElementById("albumModal").style.display = "none";
+
+}
+
+
+/* =========================
+   CLOSE LIGHTBOX
+========================= */
+
+document.getElementById("lightbox").onclick = function(){
+
+    this.style.display = "none";
+
+}
+
+
+/* =========================
+   CLOSE ON OUTSIDE CLICK
+========================= */
+
+window.onclick = function(event){
+
+    const modal = document.getElementById("albumModal");
+
+    if(event.target == modal){
+
+        modal.style.display = "none";
+
+    }
+
+}
+
+</script>
+
+</body>
 </html>
