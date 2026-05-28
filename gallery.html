@@ -6,6 +6,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
+    <!-- YOUR ORIGINAL CSS -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
     <!-- FONT AWESOME -->
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
@@ -13,101 +16,24 @@
 <style>
 
 /* =========================
-   GLOBAL
-========================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family: Arial, sans-serif;
-    background:#0f172a;
-    color:white;
-}
-
-/* =========================
-   HEADER
-========================= */
-
-header{
-    width:100%;
-    padding:20px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:#111827;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
-
-.logo{
-    color:white;
-    text-decoration:none;
-    font-size:1.4rem;
-    font-weight:bold;
-}
-
-.icons{
-    display:flex;
-    gap:18px;
-    list-style:none;
-}
-
-.icons a{
-    color:white;
-    font-size:1.2rem;
-    transition:0.3s;
-}
-
-.icons a:hover{
-    color:#38bdf8;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-    padding:80px 8% 40px;
-    text-align:center;
-}
-
-.hero h1{
-    font-size:3.2rem;
-    margin-bottom:15px;
-}
-
-.hero p{
-    max-width:800px;
-    margin:auto;
-    color:#cbd5e1;
-    line-height:1.8;
-    font-size:1.05rem;
-}
-
-/* =========================
-   ALBUM GRID
+   KEEP HTML5UP THEME STYLE
 ========================= */
 
 .album-grid{
-    padding:40px 8% 80px;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:30px;
+    margin-top:40px;
 }
 
 .album-card{
     position:relative;
     overflow:hidden;
-    border-radius:22px;
+    border-radius:12px;
     cursor:pointer;
-    height:320px;
+    height:300px;
     transition:0.4s ease;
-    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
 }
 
 .album-card img{
@@ -118,11 +44,7 @@ header{
 }
 
 .album-card:hover img{
-    transform:scale(1.1);
-}
-
-.album-card:hover{
-    transform:translateY(-8px);
+    transform:scale(1.08);
 }
 
 .album-overlay{
@@ -131,7 +53,7 @@ header{
 
     background:linear-gradient(
         to top,
-        rgba(0,0,0,0.92),
+        rgba(0,0,0,0.85),
         rgba(0,0,0,0.15)
     );
 
@@ -140,16 +62,18 @@ header{
     justify-content:flex-end;
 
     padding:25px;
+    color:white;
 }
 
 .album-overlay h2{
-    font-size:1.8rem;
-    margin-bottom:10px;
+    color:white;
+    margin-bottom:8px;
+    font-size:1.6rem;
 }
 
 .album-overlay p{
-    color:#d1d5db;
-    line-height:1.5;
+    margin:0;
+    color:#ddd;
 }
 
 /* =========================
@@ -159,25 +83,15 @@ header{
 .album-modal{
     display:none;
     position:fixed;
-    inset:0;
     z-index:9999;
-    background:rgba(0,0,0,0.96);
+    inset:0;
+    background:rgba(0,0,0,0.94);
     overflow-y:auto;
-    padding:60px 6%;
-}
-
-.close-btn{
-    position:fixed;
-    top:20px;
-    right:40px;
-    font-size:50px;
-    color:white;
-    cursor:pointer;
-    z-index:10000;
+    padding:60px;
 }
 
 .album-content{
-    max-width:1400px;
+    max-width:1300px;
     margin:auto;
 }
 
@@ -187,25 +101,34 @@ header{
 }
 
 .album-title h1{
-    font-size:3rem;
-    margin-bottom:10px;
+    color:white;
 }
 
 .album-images{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:20px;
 }
 
 .album-images img{
     width:100%;
-    border-radius:18px;
+    border-radius:10px;
     transition:0.4s ease;
     cursor:pointer;
 }
 
 .album-images img:hover{
     transform:scale(1.03);
+}
+
+.close-btn{
+    position:fixed;
+    top:20px;
+    right:40px;
+    color:white;
+    font-size:50px;
+    cursor:pointer;
+    z-index:10000;
 }
 
 /* =========================
@@ -226,18 +149,7 @@ header{
 .lightbox img{
     max-width:90%;
     max-height:90%;
-    border-radius:20px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    text-align:center;
-    padding:30px;
-    background:#111827;
-    color:#94a3b8;
+    border-radius:12px;
 }
 
 /* =========================
@@ -246,20 +158,12 @@ footer{
 
 @media(max-width:768px){
 
-    .hero h1{
-        font-size:2.3rem;
+    .album-modal{
+        padding:20px;
     }
 
     .album-card{
-        height:250px;
-    }
-
-    .album-title h1{
-        font-size:2rem;
-    }
-
-    .album-modal{
-        padding:40px 5%;
+        height:240px;
     }
 
 }
@@ -268,129 +172,260 @@ footer{
 
 </head>
 
-<body>
+<body class="is-preload">
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- Wrapper -->
+<div id="wrapper">
 
-<header>
+    <!-- =========================
+         MAIN
+    ========================== -->
 
-    <a href="#" class="logo">Nishant Kumar</a>
+    <div id="main">
+        <div class="inner">
 
-    <ul class="icons">
+            <!-- HEADER -->
+            <header id="header">
 
-        <li>
-            <a href="https://x.com/home" target="_blank">
-                <i class="fab fa-x-twitter"></i>
-            </a>
-        </li>
+                <a href="index.html" class="logo">
+                    <strong>Home</strong>
+                </a>
 
-        <li>
-            <a href="https://www.linkedin.com/feed/" target="_blank">
-                <i class="fab fa-linkedin"></i>
-            </a>
-        </li>
+                <ul class="icons">
 
-        <li>
-            <a href="https://github.com/nishantcb" target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-        </li>
+                    <li>
+                        <a href="https://x.com/home"
+                        class="icon brands fa-twitter"
+                        target="_blank">
+                        <span class="label">Twitter</span>
+                        </a>
+                    </li>
 
-        <li>
-            <a href="https://www.instagram.com/" target="_blank">
-                <i class="fab fa-instagram"></i>
-            </a>
-        </li>
+                    <li>
+                        <a href="https://www.linkedin.com/feed/"
+                        class="icon brands fa-linkedin"
+                        target="_blank">
+                        <span class="label">LinkedIn</span>
+                        </a>
+                    </li>
 
-    </ul>
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=hDMnc-UAAAAJ&hl=en"
+                        class="icon brands fa-google"
+                        target="_blank">
+                        <span class="label">Scholar</span>
+                        </a>
+                    </li>
 
-</header>
+                    <li>
+                        <a href="https://www.instagram.com/"
+                        class="icon brands fa-instagram"
+                        target="_blank">
+                        <span class="label">Instagram</span>
+                        </a>
+                    </li>
 
-<!-- =========================
-     HERO
-========================= -->
+                    <li>
+                        <a href="https://github.com/nishantcb"
+                        class="icon brands fa-github"
+                        target="_blank">
+                        <span class="label">GitHub</span>
+                        </a>
+                    </li>
 
-<section class="hero">
+                </ul>
 
-    <h1>Memories & Albums</h1>
+            </header>
 
-    <p>
-        Conferences, travel, collaborations, lab life,
-        research presentations, and unforgettable moments
-        throughout my scientific journey.
-    </p>
+            <!-- =========================
+                 CONTENT
+            ========================== -->
 
-</section>
+            <section>
 
-<!-- =========================
-     ALBUMS
-========================= -->
+                <header class="main">
+                    <h1>Memories & Albums</h1>
+                    <p>
+                        Conferences, collaborations, travel,
+                        research life, and unforgettable moments.
+                    </p>
+                </header>
 
-<section class="album-grid">
+                <!-- =========================
+                     ALBUMS
+                ========================== -->
 
-    <!-- MADRID -->
-    <div class="album-card" onclick="openAlbum('madrid')">
+                <div class="album-grid">
 
-        <img src="gallery/madrid/cover.jpg">
+                    <!-- MADRID -->
+                    <div class="album-card"
+                    onclick="openAlbum('madrid')">
 
-        <div class="album-overlay">
-            <h2>Madrid</h2>
-            <p>Conference & Spain memories</p>
+                        <img src="gallery/madrid/cover.jpg">
+
+                        <div class="album-overlay">
+                            <h2>Madrid</h2>
+                            <p>Conference & Spain memories</p>
+                        </div>
+
+                    </div>
+
+                    <!-- IIIT -->
+                    <div class="album-card"
+                    onclick="openAlbum('iiitv')">
+
+                        <img src="gallery/iiitv/cover.jpg">
+
+                        <div class="album-overlay">
+                            <h2>IIIT Varanasi</h2>
+                            <p>Campus & research life</p>
+                        </div>
+
+                    </div>
+
+                    <!-- RISHIKESH -->
+                    <div class="album-card"
+                    onclick="openAlbum('rishikesh')">
+
+                        <img src="gallery/rishikesh/cover.jpg">
+
+                        <div class="album-overlay">
+                            <h2>Rishikesh</h2>
+                            <p>Travel & nature</p>
+                        </div>
+
+                    </div>
+
+                    <!-- ITALY -->
+                    <div class="album-card"
+                    onclick="openAlbum('italy')">
+
+                        <img src="gallery/italy/cover.jpg">
+
+                        <div class="album-overlay">
+                            <h2>Italy</h2>
+                            <p>International collaborations</p>
+                        </div>
+
+                    </div>
+
+                    <!-- LAB -->
+                    <div class="album-card"
+                    onclick="openAlbum('lab')">
+
+                        <img src="gallery/lab/cover.jpg">
+
+                        <div class="album-overlay">
+                            <h2>Lab Life</h2>
+                            <p>Research & coding moments</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
         </div>
-
     </div>
 
-    <!-- IIIT -->
-    <div class="album-card" onclick="openAlbum('iiitv')">
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
 
-        <img src="gallery/iiitv/cover.jpg">
+    <div id="sidebar">
+        <div class="inner">
 
-        <div class="album-overlay">
-            <h2>IIIT Varanasi</h2>
-            <p>Campus & research life</p>
+            <!-- SEARCH -->
+            <section id="search" class="alt">
+                <form method="post" action="#">
+                    <input type="text"
+                    name="query"
+                    id="query"
+                    placeholder="Search" />
+                </form>
+            </section>
+
+            <!-- MENU -->
+            <nav id="menu">
+
+                <header class="major">
+                    <h2>Menu</h2>
+                </header>
+
+                <ul>
+
+                    <li><a href="index.html">Homepage</a></li>
+
+                    <li><a href="github.html">GitHub</a></li>
+
+                    <li><a href="publications.html">Publications</a></li>
+
+                    <li>
+                        <a href="index.html#research">
+                            Research Interest
+                        </a>
+                    </li>
+
+                    <li><a href="gallery.html">Gallery</a></li>
+
+                    <li><a href="webservers.html">Webservers</a></li>
+
+                    <li><a href="conferences.html">Conferences</a></li>
+
+                    <li>
+                        <span class="opener">Downloads</span>
+
+                        <ul>
+                            <li><a href="packages.html">Packages</a></li>
+                            <li><a href="nishant_resume.pdf">Resume</a></li>
+                        </ul>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <!-- CONTACT -->
+            <section>
+
+                <header class="major">
+                    <h2>Get in touch</h2>
+                </header>
+
+                <p>
+                    Feel free to reach out with any questions
+                    or collaboration ideas.
+                </p>
+
+                <ul class="contact">
+
+                    <li class="icon solid fa-envelope">
+                        <a href="#">
+                            nishantk@iiitd.ac.in
+                        </a>
+                    </li>
+
+                    <li class="icon solid fa-envelope">
+                        <a href="#">
+                            nishantkumar031096@gmail.com
+                        </a>
+                    </li>
+
+                    <li class="icon solid fa-home">
+                        A318 R & D, IIIT-Delhi<br />
+                        New Delhi, India -110020
+                    </li>
+
+                </ul>
+
+            </section>
+
         </div>
-
     </div>
 
-    <!-- RISHIKESH -->
-    <div class="album-card" onclick="openAlbum('rishikesh')">
-
-        <img src="gallery/rishikesh/cover.jpg">
-
-        <div class="album-overlay">
-            <h2>Rishikesh</h2>
-            <p>Nature & travel memories</p>
-        </div>
-
-    </div>
-
-    <!-- ITALY -->
-    <div class="album-card" onclick="openAlbum('italy')">
-
-        <img src="gallery/italy/cover.jpg">
-
-        <div class="album-overlay">
-            <h2>Italy</h2>
-            <p>International collaborations</p>
-        </div>
-
-    </div>
-
-    <!-- LAB -->
-    <div class="album-card" onclick="openAlbum('lab')">
-
-        <img src="gallery/lab/cover.jpg">
-
-        <div class="album-overlay">
-            <h2>Lab Life</h2>
-            <p>Research, coding & science</p>
-        </div>
-
-    </div>
-
-</section>
+</div>
 
 <!-- =========================
      ALBUM MODAL
@@ -398,7 +433,8 @@ footer{
 
 <div id="albumModal" class="album-modal">
 
-    <span class="close-btn" onclick="closeAlbum()">&times;</span>
+    <span class="close-btn"
+    onclick="closeAlbum()">&times;</span>
 
     <div class="album-content">
 
@@ -406,7 +442,8 @@ footer{
             <h1 id="albumHeading"></h1>
         </div>
 
-        <div id="albumImages" class="album-images"></div>
+        <div id="albumImages"
+        class="album-images"></div>
 
     </div>
 
@@ -423,17 +460,7 @@ footer{
 </div>
 
 <!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    © 2026 Nishant Kumar | Research Gallery
-
-</footer>
-
-<!-- =========================
-     SCRIPT
+     SCRIPTS
 ========================= -->
 
 <script>
@@ -457,18 +484,17 @@ const albums = {
     iiitv: {
         title: "IIIT Varanasi",
         images: [
-            "gallery/1.jpg",
-            "gallery/2.jpg",
-            "gallery/3.jpg",
-            "gallery/iiitv/4.jpg"
+            "gallery/iiitv/1.jpg",
+            "gallery/iiitv/2.jpg",
+            "gallery/iiitv/3.jpg"
         ]
     },
 
     rishikesh: {
         title: "Rishikesh",
         images: [
-            "gallery/4.jpg",
-            "gallery/2.jpg",
+            "gallery/rishikesh/1.jpg",
+            "gallery/rishikesh/2.jpg",
             "gallery/rishikesh/3.jpg"
         ]
     },
@@ -487,8 +513,7 @@ const albums = {
         images: [
             "gallery/lab/1.jpg",
             "gallery/lab/2.jpg",
-            "gallery/lab/3.jpg",
-            "gallery/lab/4.jpg"
+            "gallery/lab/3.jpg"
         ]
     }
 
@@ -501,28 +526,35 @@ const albums = {
 
 function openAlbum(albumName){
 
-    const modal = document.getElementById("albumModal");
+    const modal =
+    document.getElementById("albumModal");
 
-    const albumImages = document.getElementById("albumImages");
+    const albumImages =
+    document.getElementById("albumImages");
 
-    const heading = document.getElementById("albumHeading");
+    const heading =
+    document.getElementById("albumHeading");
 
     albumImages.innerHTML = "";
 
-    heading.innerText = albums[albumName].title;
+    heading.innerText =
+    albums[albumName].title;
 
     albums[albumName].images.forEach(image => {
 
-        const img = document.createElement("img");
+        const img =
+        document.createElement("img");
 
         img.src = image;
 
-        /* OPEN LIGHTBOX */
+        /* LIGHTBOX */
         img.onclick = function(){
 
-            document.getElementById("lightbox").style.display = "flex";
+            document.getElementById("lightbox")
+            .style.display = "flex";
 
-            document.getElementById("lightboxImg").src = image;
+            document.getElementById("lightboxImg")
+            .src = image;
 
         }
 
@@ -541,7 +573,8 @@ function openAlbum(albumName){
 
 function closeAlbum(){
 
-    document.getElementById("albumModal").style.display = "none";
+    document.getElementById("albumModal")
+    .style.display = "none";
 
 }
 
@@ -550,7 +583,8 @@ function closeAlbum(){
    CLOSE LIGHTBOX
 ========================= */
 
-document.getElementById("lightbox").onclick = function(){
+document.getElementById("lightbox")
+.onclick = function(){
 
     this.style.display = "none";
 
@@ -558,12 +592,13 @@ document.getElementById("lightbox").onclick = function(){
 
 
 /* =========================
-   CLOSE ON OUTSIDE CLICK
+   CLOSE OUTSIDE CLICK
 ========================= */
 
 window.onclick = function(event){
 
-    const modal = document.getElementById("albumModal");
+    const modal =
+    document.getElementById("albumModal");
 
     if(event.target == modal){
 
@@ -574,6 +609,14 @@ window.onclick = function(event){
 }
 
 </script>
+
+<!-- ORIGINAL SCRIPTS -->
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>
